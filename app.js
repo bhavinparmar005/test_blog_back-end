@@ -12,6 +12,10 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/", require("./Router/AllRouter"));
+app.use((err, req, res, next) => {
+  console.error(err.stack); // log actual error
+  res.status(500).json({ message: err.message || "Server error" });
+});
 
 app.listen(process.env.PORT, (err) => {
   if (err) {
