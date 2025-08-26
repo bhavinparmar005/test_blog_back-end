@@ -17,8 +17,6 @@ module.exports.totalstudentandschools = async (req, res) => {
       totalStudents += Number(school.student || 0); // convert string to number if needed
     });
 
-    console.log("Total Students:", totalStudents);
-
     res.status(200).json({
       totalStudents,
       totalSchools: allSchools.length,
