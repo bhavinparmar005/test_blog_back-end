@@ -19,3 +19,5 @@ app.listen(process.env.PORT, (err) => {
   }
   console.log(`server start at port ${process.env.PORT}`);
 });
+
+module.exports = app;
